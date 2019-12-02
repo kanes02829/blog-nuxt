@@ -10,12 +10,12 @@
             </header>
             <div class="card-content">
               <div class="content">
-                {{post.summary}}
+                {{post.body}}
                 <br />
                 <small>
                   by
-                  <strong>{{post.author}}</strong>
-                  \\ {{post.published}}
+                  <strong>{{post.userId}}</strong>
+                  \\ {{post.id}}
                 </small>
               </div>
             </div>
@@ -29,11 +29,22 @@
   </section>
 </template>
 <script>
-import posts from "~/posts.json";
+import axios from "axios";
+
 export default {
   name: "posts",
+  created() {
+    return axios
+      .get(`https://jsonplaceholder.typicode.com/posts`)
+      .then(res => {
+        this.posts = res.data;
+      })
+      .catch(e => {
+        error({ statusCode: 404, message: "Post not found" });
+      });
+  },
   data() {
-    return { posts };
+    return { posts: [] };
   }
 };
 </script>

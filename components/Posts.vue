@@ -20,7 +20,7 @@
               </div>
             </div>
             <footer class="card-footer">
-              <a href="/post/id" class="card-footer-item">Read More</a>
+              <nuxt-link :to="`/post/${post.id}`" class="card-footer-item">Read More</nuxt-link>
             </footer>
           </div>
         </div>

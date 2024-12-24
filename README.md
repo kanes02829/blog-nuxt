@@ -1,4 +1,4 @@
-# nuxt-ssr-blog-from-scratch
+# nuxt-ssr-blog
 
 > A blog template SSR with Nuxt and Vue
 
@@ -18,5 +18,3 @@ $ npm run start
 # generate static project
 $ npm run generate
 ```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
